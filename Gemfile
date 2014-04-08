@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem "factory_girl_rails"
 gem 'bootstrap-sass'
+gem 'sass-rails'
 
 
 group :development do

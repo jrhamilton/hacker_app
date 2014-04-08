@@ -29,7 +29,13 @@ class UploadsController < ApplicationController
 
   def show
     @upload = Upload.find(params[:id])
+    @comment = Comment.new
+  end
+
+  def destroy
     @upload = Upload.find(params[:id])
+    @upload.destroy
+    redirect_to("/uploads/")
   end
 
   private

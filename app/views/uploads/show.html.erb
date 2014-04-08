@@ -1,0 +1,19 @@
+<h1><%= @upload.title %></h1>
+<a href="<%= @upload.link %>"><%= @upload.title %></a>
+<p>Ranking: <%= @upload.vote_count %>
+
+<br>
+<h3>Add a new comment</h3>
+<%= render './comments/form' %>
+<%= link_to "Back", uploads_path(@upload), :class => "btn btn-danger" %>
+
+<%= link_to "Delete", upload_path(@upload),
+                      :upload => "You sure?",
+                      :method => "delete",
+                      :class => "btn btn-danger" %>
+<br>
+<h2>Comments</h2>
+
+<% @upload.comments.each do |com| %>
+  <%= com.name %>: <%= com.comment %><hr>
+<% end %>
