@@ -2,12 +2,12 @@ source 'https://rubygems.org'
 
 gem 'rails'
 gem 'pg'
-gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem "factory_girl_rails"
+gem 'bootstrap-sass'
 
 
 group :development do

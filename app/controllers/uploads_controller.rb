@@ -1,13 +1,20 @@
 class UploadsController < ApplicationController
 
   def index
-    @uploads = Upload.all
+    @uploads = Upload.all.order(vote_count: :desc)
+    render '/uploads/index.html.erb'
   end
 
   def new
     if !@upload
       @upload = Upload.new
     end
+  end
+
+  def update
+    @upload = Upload.find(params[:id])
+    @upload.update(upload_params)
+    index
   end
 
   def create
@@ -21,7 +28,8 @@ class UploadsController < ApplicationController
   end
 
   def show
-    @upload = Upload.find(:id => params[:id])
+    @upload = Upload.find(params[:id])
+    @upload = Upload.find(params[:id])
   end
 
   private
