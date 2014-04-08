@@ -1,0 +1,10 @@
+<h1>Hacker News</h1>
+
+<ol>
+  <% @uploads.each do |upload| %>
+    <li><a href="<%= upload.link %>"><%= upload.title %></a><br>&nbsp; &nbsp; By: <%= upload.name %></li>
+  <% end %>
+</ol>
+
+
+<a href="/uploads/new"><button class="btn btn-primary">Add a new entry</button</a>

@@ -1,0 +1,13 @@
+<%= render('layouts/errors', :object => @upload) %>
+
+<%= form_for(@upload) do |f| %>
+  <div class="form-group">
+    <%= f.label "User name" %>
+    <%= f.text_field :name %><br>
+    <%= f.label :title %>
+    <%= f.text_field :title %><br>
+    <%= f.label :link %>
+    <%= f.text_field :link %>
+  </div>
+  <%= f.submit(:class => 'btn btn-primary') %>
+<% end %>
