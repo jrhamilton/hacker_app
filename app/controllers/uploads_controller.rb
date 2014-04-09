@@ -13,7 +13,11 @@ class UploadsController < ApplicationController
 
   def update
     @upload = Upload.find(params[:id])
-    @upload.update(upload_params)
+    if params[:vote]
+      @upload.vote(params[:vote])
+    else
+      @upload.update(upload_params)
+    end
     index
   end
 
@@ -35,7 +39,7 @@ class UploadsController < ApplicationController
   def destroy
     @upload = Upload.find(params[:id])
     @upload.destroy
-    redirect_to("/uploads/")
+    redirect_to("/uploads")
   end
 
   private
